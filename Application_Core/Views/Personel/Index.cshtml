@@ -1,0 +1,39 @@
+﻿@using Application_Core.Models
+@model List<Personel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_NewLayout.cshtml";
+}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+<table class="table table-bordered">
+    <thead>
+         <tr>
+             <th>Id</th>
+             <th>Name</th>
+             <th>SurName</th>
+             <th>City</th>
+             <th>Department</th>
+             <th>Delete</th>
+             <th>Update</th>
+         </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.PersonelId</td>
+            <td>@item.PersonelName</td>
+            <td>@item.PersonelSurName</td>
+            <td>@item.PersonelCity</td>
+            <td>@item.Departments.DepartmentName</td>
+            <td><a href="/Department/Delete/@item.PersonelId" class="btn btn-warning">Delete</a></td>
+            <td><a href="/Department/Edit/@item.PersonelId" class="btn btn-info">Edit</a></td>
+            <td><a href="//@item.PersonelId" class="btn btn-success">Details</a></td>
+
+        </tr>
+    }
+</table>
+
+            <a href="/Personel/AddPero/"class="btn btn-primary">Create Pero</a>

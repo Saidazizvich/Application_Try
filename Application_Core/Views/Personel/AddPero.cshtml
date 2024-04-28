@@ -1,0 +1,22 @@
+﻿@model Application_Core.Models.Personel
+
+@{
+    ViewData["Title"] = "AddPero";
+    Layout = "~/Views/Shared/_NewLayout.cshtml";
+}
+
+<h1>AddPero</h1>
+
+<form method="post">
+    <br />
+     <input asp-for="PersonelSurName" class="form-control" />
+     <br />
+    <input asp-for="PersonelSurName" class="form-control" />
+    <br />
+    <input asp-for="PersonelCity" class="form-control" />
+    <br />
+    @Html.DropDownListFor(x=>x.Departments.DepartmentId,(List<SelectListItem>)ViewBag.Pero, new { @class="form-control"})
+
+    <button class="btn btn-primary">Personel Add</button>
+
+</form>

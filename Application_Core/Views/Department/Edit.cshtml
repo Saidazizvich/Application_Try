@@ -1,0 +1,19 @@
+﻿@model Application_Core.Models.Department
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_NewLayout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<form method="post">
+    <div class="row">
+        <br />
+        <input asp-for="DepartmentId" class="form-control" />
+        <br />
+        <input asp-for="DepartmentName" class="form-control" />
+    </div>
+
+   <button class="btn btn-primary">Click Me</button>
+</form>

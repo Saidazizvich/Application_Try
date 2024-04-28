@@ -1,0 +1,33 @@
+﻿@using Application_Core.Models
+@model List<Personel>
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_NewLayout.cshtml";
+}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+<br />
+<div>@ViewBag.Depo</div>
+<br />
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>SurName</th>
+            <th>City</th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.PersonelId</td>
+            <td>@item.PersonelName</td>
+            <td>@item.PersonelSurName</td>
+            <td>@item.PersonelCity</td>
+        </tr>
+    }
+</>
+
+
+
